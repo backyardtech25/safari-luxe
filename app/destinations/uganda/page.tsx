@@ -1,0 +1,335 @@
+"use client";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Link from "next/link";
+
+export default function UgandaPage() {
+  const highlights = [
+    "Gorilla trekking in Bwindi",
+    "Chimpanzee tracking experiences",
+    "Wildlife safaris in major parks",
+    "Lakes, waterfalls, and lush scenery",
+  ];
+
+  const stats = [
+    { number: "Bwindi", label: "Gorilla Trekking Highlight" },
+    { number: "Wild", label: "Nature & Adventure Feel" },
+    { number: "Primates", label: "Rich Experience Mix" },
+    { number: "Uganda", label: "Signature Safari Identity" },
+  ];
+
+  return (
+    <>
+      <Navbar />
+
+      <main className="detail-page">
+        <section className="hero">
+          <div className="container">
+            <p className="eyebrow">Destination</p>
+            <h1 className="hero-title">Uganda</h1>
+            <p className="hero-text">
+              The Pearl of Africa, where gorilla trekking, wildlife, green landscapes,
+              and unforgettable safari moments come together beautifully.
+            </p>
+          </div>
+        </section>
+
+        <section className="stats-section">
+          <div className="container">
+            <div className="stats-grid">
+              {stats.map((item) => (
+                <div key={item.label} className="stat-card">
+                  <div className="stat-number">{item.number}</div>
+                  <p className="stat-label">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="content-section">
+          <div className="container two-col">
+            <div className="content-card">
+              <p className="eyebrow">Why Visit Uganda</p>
+              <h2 className="section-title">
+                A destination that blends primates, wildlife, and dramatic natural beauty.
+              </h2>
+              <p className="body-text">
+                Uganda offers some of East Africa’s most memorable safari experiences,
+                especially for travelers who want more than just game drives. From mountain
+                gorillas and chimpanzees to savannah parks, lakes, and waterfalls, it
+                delivers variety, beauty, and emotional depth.
+              </p>
+              <p className="body-text">
+                It is ideal for travelers looking for authentic, powerful, and immersive
+                safari experiences with a strong mix of adventure and scenery.
+              </p>
+            </div>
+
+            <div className="glass-card">
+              <h3 className="side-title">Top Highlights</h3>
+              <div className="highlight-list">
+                {highlights.map((item) => (
+                  <div key={item} className="highlight-item">
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="cta-section">
+          <div className="container">
+            <div className="cta-panel">
+              <p className="eyebrow">Plan Uganda</p>
+              <h2 className="cta-title">Let’s Design Your Uganda Safari Experience</h2>
+              <p className="cta-text">
+                From gorilla trekking to wildlife adventures and scenic escapes, we can help
+                you create a Uganda journey that feels premium, smooth, and unforgettable.
+              </p>
+
+              <div className="cta-actions">
+                <Link href="/book-now" className="btn btn-primary">
+                  Start Planning
+                </Link>
+
+                <Link href="/contact" className="btn btn-secondary">
+                  Contact Us
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+
+      <style jsx>{`
+        .detail-page {
+          min-height: 100vh;
+          background: radial-gradient(circle at top, rgba(200, 169, 107, 0.1), transparent 28%), #071411;
+          color: white;
+          font-family: Arial, sans-serif;
+        }
+
+        .container {
+          width: min(1200px, calc(100% - 40px));
+          margin: 0 auto;
+        }
+
+        .hero {
+          min-height: 78vh;
+          display: flex;
+          align-items: center;
+          padding: 120px 0 60px;
+          background-image:
+            linear-gradient(rgba(7, 20, 17, 0.4), rgba(7, 20, 17, 0.82)),
+            url("/images/uganda.jpg");
+          background-size: cover;
+          background-position: center;
+        }
+
+        .eyebrow {
+          color: #c8a96b;
+          text-transform: uppercase;
+          letter-spacing: 4px;
+          font-size: 14px;
+          margin-bottom: 18px;
+        }
+
+        .hero-title {
+          font-size: clamp(42px, 7vw, 68px);
+          line-height: 1.02;
+          margin: 0 0 22px;
+          max-width: 760px;
+        }
+
+        .hero-text {
+          font-size: 22px;
+          line-height: 1.9;
+          color: #e7e5e4;
+          max-width: 760px;
+          margin: 0;
+        }
+
+        .stats-section {
+          padding: 70px 0 40px;
+        }
+
+        .stats-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 18px;
+        }
+
+        .stat-card {
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 24px;
+          padding: 24px;
+          backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+          font-size: 28px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+
+        .stat-label {
+          color: #d6d3d1;
+          line-height: 1.7;
+          margin: 0;
+        }
+
+        .content-section {
+          padding: 50px 0 90px;
+        }
+
+        .two-col {
+          display: grid;
+          grid-template-columns: 1.1fr 0.9fr;
+          gap: 28px;
+          align-items: start;
+        }
+
+        .content-card,
+        .glass-card,
+        .cta-panel {
+          border-radius: 30px;
+          padding: 34px;
+        }
+
+        .content-card {
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card,
+        .cta-panel {
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          backdrop-filter: blur(12px);
+        }
+
+        .section-title {
+          font-size: clamp(30px, 5vw, 42px);
+          line-height: 1.12;
+          margin: 0 0 18px;
+        }
+
+        .body-text {
+          color: #d6d3d1;
+          line-height: 1.95;
+          font-size: 18px;
+          margin: 0 0 22px;
+        }
+
+        .body-text:last-child {
+          margin-bottom: 0;
+        }
+
+        .side-title {
+          font-size: 30px;
+          margin: 0 0 20px;
+        }
+
+        .highlight-list {
+          display: grid;
+          gap: 16px;
+        }
+
+        .highlight-item {
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 20px;
+          padding: 18px 20px;
+          color: #e7e5e4;
+          line-height: 1.7;
+        }
+
+        .cta-section {
+          padding: 0 0 100px;
+        }
+
+        .cta-title {
+          font-size: clamp(30px, 5vw, 42px);
+          line-height: 1.12;
+          margin: 0 0 18px;
+          max-width: 900px;
+        }
+
+        .cta-text {
+          color: #d6d3d1;
+          line-height: 1.9;
+          font-size: 18px;
+          max-width: 860px;
+          margin: 0 0 28px;
+        }
+
+        .cta-actions {
+          display: flex;
+          gap: 16px;
+          flex-wrap: wrap;
+        }
+
+        .btn {
+          display: inline-block;
+          text-decoration: none;
+          padding: 15px 28px;
+          border-radius: 999px;
+          font-weight: bold;
+        }
+
+        .btn-primary {
+          background: #c8a96b;
+          color: #071411;
+        }
+
+        .btn-secondary {
+          background: rgba(255, 255, 255, 0.06);
+          color: white;
+          border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        @media (max-width: 1100px) {
+          .stats-grid {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          .two-col {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        @media (max-width: 820px) {
+          .hero {
+            min-height: auto;
+            padding: 110px 0 60px;
+          }
+
+          .hero-text {
+            font-size: 18px;
+          }
+
+          .stats-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .content-card,
+          .glass-card,
+          .cta-panel {
+            padding: 24px;
+          }
+        }
+
+        @media (max-width: 520px) {
+          .container {
+            width: min(1200px, calc(100% - 24px));
+          }
+        }
+      `}</style>
+    </>
+  );
+}
